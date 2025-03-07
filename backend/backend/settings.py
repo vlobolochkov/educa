@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-h!v&eji1*z%y97_^7efbc5*_yjs9p1+-(%$dt$5@hf6g_xq)y-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False  # Для production
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['my-django-backend.onrender.com']
 
 # Application definition
 
@@ -65,6 +65,8 @@ MIDDLEWARE = [
 ]
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_ALLOW_ALL = True  # Разрешить все домены (для разработки)
 
